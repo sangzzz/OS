@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>File Allocation</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Article-List.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand" href="../index.html" style="color:white;">OS Simulator</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" style="color:white;">
+					<a class="nav-link" style="color:white;" href="Wiki/index.html">Wiki</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+    <div class="article-list">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">File Allocation</h2>
+                <p class="text-center">Structures for organizing/allocating files in disk</p>
+            </div>
+            <div class="row articles">
+                <div class="col-sm-6 col-md-4 item"><a href="#"></a>
+                    <h3 class="name">Sequential Allocation</h3>
+                    <p class="description">Files are organized contiguosly in disk</p><a class="action" href="./SeqFA/seqFA.html"><i class="fa fa-arrow-circle-right"></i></a></div>
+                <div class="col-sm-6 col-md-4 item"><a href="#"></a>
+                    <h3 class="name">Indexed Allocation</h3>
+                    <p class="description">An index block is used to store all file nodes.</p><a class="action" href="./indexedFA/indexedFA.html"><i class="fa fa-arrow-circle-right"></i></a></div>
+                <div class="col-sm-6 col-md-4 item"><a href="#"></a>
+                    <h3 class="name">Linked Allocation</h3>
+                    <p class="description">Files are linked to each other.</p><a class="action" href="./LinkFA/LinkFA.html"><i class="fa fa-arrow-circle-right"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

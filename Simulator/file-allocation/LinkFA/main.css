@@ -1,0 +1,128 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    /* font-family: ; */
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    margin: 0px;
+    padding: 0fr;
+}
+
+.heading {
+    margin: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    padding: 70px;
+}
+
+
+
+
+
+.file-input {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.file-name-input, .file-size-input {
+    border: none;
+    /* color: black; */
+    border-bottom: 1px solid rgb(14, 13, 13);
+    font-size: 1em;
+    text-align: center;
+}
+.file-name-input {
+    float: left;
+}
+.file-size-input {
+    margin-left: 250px;
+}
+
+.file-size-input:focus, .file-name-input:focus {
+    transition: 2s;
+    border-bottom: 2px solid black;
+    outline: 0;
+}
+
+.add-btn {
+    color: white;
+    margin-top: 20px;
+    background-color: black;
+    width: 100px;
+    height: 35px;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+    padding-top: 7px;
+}
+
+.btn {
+    background-color: #000;
+}
+
+.add-btn:hover {
+    cursor: pointer;
+    background-color: rgb(117, 114, 114);
+}
+
+input,
+label {
+    display: block;
+}
+
+table {
+    margin-top: 20px;
+    margin-left: 20px;;
+    /* table-layout: fixed; */
+    width: 70%;
+    border-collapse: separate;
+    border-spacing: 20px;
+    
+}
+
+td {
+    background-color: red;
+    border-radius: 1em;
+    /* padding-left: 5px; */
+    /* padding-right: 5px; */
+    padding: 7px;
+    text-align: center;
+}
+
+.rightar {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .rightar {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+tr {
+    height: 15px;
+}
+
+.fileName {
+    background-color: #c1bdbd;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* border-spacing: 50px 0; */
+    /* margin-left: 10px; */
+    width: 50px;
+}
+
+.indBlock {
+    background-color: brown;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 30px;
+}
+

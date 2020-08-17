@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>OS Simulator</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <a class="navbar-brand" href="">OS Simulator</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Wiki</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+
+      <!-- Title -->
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <h1 class="big-heading">Simulate common procedures of an operating system</h1>
+          <button type="button" class="btn btn-dark btn-lg download-button"><a href="#pricing" style="color:white">Simulations</a></button>
+          <!-- <button type="button" class="btn btn-outline-light btn-lg download-button"><i class="fab fa-google-play"></i> Download</button> -->
+        </div>
+
+        <div class="col-lg-6">
+          <img class="title-image" src="images/iphone6.png" alt="iphone-mockup">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="white-section" id="pricing">
+
+    <h2 class="section-heading">Simulations</h2>
+    <p>Click on the topic you would like to simulate</p>
+
+    <div class="row">
+
+
+
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Page Replacement</h3>
+          </div>
+          <div class="card-body">
+            <p>The process of swapping out an existing page from the frame of a main memory and replacing it with the required page.</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="load(0)">Simulate</button>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Deadlocks</h3>
+          </div>
+          <div class="card-body">
+            <p>Algorithms to dynamically examines the resource-allocation state and avoid occurence of deadlocks</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="load(1)">Simulate</button>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>CPU Scheduling</h3>
+          </div>
+          <div class="card-body">
+            <p>A process which allows one process to use the CPU while the execution of another process is on hold.</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="load(2)">Simulate</button>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Memory Management</h3>
+          </div>
+          <div class="card-body">
+            <p>Functionality of OS which manages primary memory and moves processes back and forth between main memory and disk during execution</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="load(3)">Simulate</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>File Allocation</h3>
+          </div>
+          <div class="card-body">
+            <p>Various methods which can be used to allocate disk space to the files ensuring high performance and efficiency of the system</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="load(4)">Simulate</button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Process Synchronization</h3>
+          </div>
+          <div class="card-body">
+            <p>Mechanisms to provide synchronization among the processes and allow processes to access critical section in a synchronized manner</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="load(5)">Simulate</button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-column col-lg-4 col-md-6"></div>
+
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Disk Scheduling</h3>
+          </div>
+          <div class="card-body">
+            <p>A technique used by the operating system to schedule multiple requests for accessing the disk</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="load(6)">Simulate</button>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </section>
+
+  <section class="colored-section" id="testimonials">
+
+    <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active container-fluid">
+          <h2 class="testimonial-text"><a href="./deadlock/wiki.html" style="color:white">Wiki on Deadlocks</a></h2>
+        </div>
+        <div class="carousel-item container-fluid">
+          <h2 class="testimonial-text"><a href="./page-replacement/wiki.html" style="color:white">Wiki on Page Replacement Algorithms</a></h2>
+        </div>
+        <div class="carousel-item container-fluid">
+          <h2 class="testimonial-text"><a href="" style="color:white">Wiki on Process Synchronization</a></h2>
+        </div>
+        <div class="carousel-item container-fluid">
+          <h2 class="testimonial-text"><a href="file-allocation/Wiki/index.html" style="color:white">Wiki on File Allocation</a></h2>
+        </div>
+        <div class="carousel-item container-fluid">
+          <h2 class="testimonial-text"><a href="process-scheduling/wiki.html" style="color:white">Wiki on Process Scheduling</a></h2>
+        </div>
+        <div class="carousel-item container-fluid">
+          <h2 class="testimonial-text"><a href="disk/wiki1.html" style="color:white">Wiki on Disk Scheduling</a></h2>
+        </div>
+        <div class="carousel-item container-fluid">
+          <h2 class="testimonial-text"><a href="./memory-management/mm_wiki.html" style="color:white">Wiki on Memory Management</a></h2>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+
+  </section>
+
+
+
+
+
+  <!-- Footer -->
+
+  <footer class="white-section" id="footer">
+    <div class="container-fluid">
+      <p>Team:</p>
+      <div class="container">
+
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th>Roll Number</th>
+              <th>Name</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>181CO241</td>
+              <td>Rajath C Aralikatti</td>
+
+            </tr>
+            <tr>
+              <td>181CO242</td>
+              <td>Ravi Kumar</td>
+            </tr>
+            <tr>
+              <td>181CO243</td>
+              <td>Rohith VS</td>
+            </tr>
+            <tr>
+              <td>181CO244</td>
+              <td>Sai Krishna Anand</td>
+            </tr>
+            <tr>
+              <td>181CO245</td>
+              <td>Sasidhar Swarangi</td>
+            </tr>
+            <tr>
+              <td>181CO246</td>
+              <td>Sangeeth SV</td>
+            </tr>
+            <tr>
+              <td>181CO247</td>
+              <td>Sayad Shahanaz</td>
+            </tr>
+            <tr>
+              <td>181CO248</td>
+              <td>Shashank D</td>
+            </tr>
+            <tr>
+              <td>181CO249</td>
+              <td>Shreesha Bharadwaj</td>
+            </tr>
+            <tr>
+              <td>181CO250</td>
+              <td>Shruthan R</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+<script>
+  function load(id) {
+    switch (id) {
+      case 0:
+        location.href = "page-replacement/index.html";
+        break;
+      case 1:
+        location.href = "deadlock/index.html";
+        break;
+      case 2:
+        location.href = "process-scheduling/index.html";
+        break;
+      case 3:
+        location.href = "memory-management/index.html";
+        break;
+      case 4:
+        location.href = "file-allocation/index.html";
+        break;
+      case 5:
+        location.href = "process-synchronization/index.html";
+        break;
+      case 6:
+        location.href = "disk/disk_scheduling.html";
+        break;
+
+    }
+  }
+</script>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    WIKI
+  </title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">OS simulator</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Process-Syncronisation-Home</a></li>
+      <li class="active"><a href="#">Wiki</a></li>
+    </ul>
+  </div>
+</nav>
+<br><br><br>
+<style>
+  .flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+header {background: black;color:white;}
+
+.intro{
+  margin-top: 22px;
+  padding: 30px 0px;
+  background-color: #f3f3f3;
+}
+body{
+  margin-left: 5%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+</style>
+<body>
+    <div class="flex-container">
+        <header>
+            <h1>Synchronisation</h1>
+        </header>
+        </div>
+  <h1>Introduction</h1>
+  <p> Process Synchronization means sharing system resources by processes in a such a way that, Concurrent access to shared data is handled thereby minimizing the chance of inconsistent data. Maintaining data consistency demands mechanisms to ensure synchronized execution of cooperating processes.<br>
+    The procedure involved in preserving the appropriate order of execution of cooperative processes is known as Process Synchronization. There are various synchronization mechanisms that are used to synchronize the processes.
+  </p>
+  <h2>Synchronisation problem</h2>
+  <p>On the basis of synchronization, processes are categorized as one of the following two types:
+    <br>
+    Independent Process : Execution of one process does not affects the execution of other processes.<br>
+    Cooperative Process : Execution of one process affects the execution of other processes.<br>
+    Process synchronization problem arises in the case of Cooperative process also because resources are shared in Cooperative processes.</p>
+  <h3>Race Condition</h3>
+  <p>A Race Condition typically occurs when two or more threads try to read, write and possibly make the decisions based on the memory that they are accessing concurrently.</p>
+  <h3> Critical Section</h3>
+  <p>The regions of a program that try to access shared resources and may cause race conditions are called critical section. To avoid race condition among the processes, we need to assure that only one process at a time can execute within the critical section.</p>
+  <h3>Semaphores</h3>
+  <p>Semaphore is simply a variable. This variable is used to solve the critical section problem and to achieve process synchronization in the multiprocessing environment.
+    The two most common kinds of semaphores are counting semaphores and binary semaphores. Counting semaphore can take non-negative integer values and Binary semaphore can take the value 0 & 1. only.</p>
+  <h3>Mutual Exclusion</h3>
+  <p>By Mutual Exclusion, we mean that if one process is executing inside critical section then the other process must not enter in the critical section. When you have a multi-threaded application, the different threads sometimes share a common resource, such as a variable or similar. This shared source often cannot be accessed at the same time, so a construct is needed to ensure that only one thread is using that resource at a time.
+
+    The concept is called "mutual exclusion" (short Mutex), and is a way to ensure that only one thread is allowed inside that area, using that resource etc.<br>
+
+Switching context<br>
+Switching to user mode<br>
+Jumping to the proper location in the user program to restart that program<br></p>
+<h2>Producer Consumer</h2>
+<p>
+It is also known as the bounded buffer problem. The problem consists of two processes, the producer and consumer, sharing a common buffer (fixed size).
+
+The producer's job is to generate data and store it in the common buffer, one at a time. The consumer keeps consuming data until the common buffer empties.
+
+The producer should't be able to produce more data items when the buffer is full, and the consumer shouldn't be able to consumer the data items when the buffer is empty.
+</p>
+<h2>Dining Philosopher</h2>
+<p>
+The problem consists of five philosophers sitting around a circular table.
+
+The table has five forks. At any instance, a philosopher is eating or thinking.
+
+When a philosopher wants to eat, he has to use two forks, one from his left and one from his right.
+
+When a philosopher starts thinking, he keeps the two forks on the table.
+
+So, philosopher requires the two forks(shared resource) to start eating.
+</p>
+
+<h2>Barrier Semaphore</h2>
+<p>
+    In parallel computing, a barrier is a type of synchronization method. A barrier for a group of threads or processes in the source code means any thread/process must stop at this point and cannot proceed until all other threads/processes reach this barrier.The basic barrier has mainly two variables, one of which records the pass/stop state of the barrier, the other of which keeps the total number of threads that have entered in the barrier. The barrier state was initialized to be "stop" by the first threads coming into the barrier. Whenever a thread enters, based on the number of threads already in the barrier, only if it is the last one, the thread sets the barrier state to be "pass" so that all the threads can get out of the barrier. On the other hand, when the incoming thread is not the last one, it is trapped in the barrier and keeps testing if the barrier state has changed from "stop" to "pass", and it gets out only when the barrier state changes to "pass".
+  </p>
+<h2>Reader Writer</h2>
+<p>
+This is an example of common concurrency problem. Here many threads try to access the same shared resource simultaneously. Threads may read/write (or append).
+
+Threads reading the shared resource can do it simultaneously, i.e. two or more readers are allowed to access the shared resource.
+
+If a thread is writing into the resource, no other thread can access the resource.
+
+</p>
+<h2>Sleeping Barber</h2>
+<p>
+    This is an example of synchronization problem. The objective is to keeping a barber working when there are customers, resting when there are none in an orderly manner.
+
+    The barber has one barber chair and a waiting room with a number of chairs in it. When the barber finishes cutting a customer's hair, he dismisses the customer
+
+    and then goes to the waiting room to see if there are other customers waiting. If there are, he brings one of them back to the chair and cuts his hair.
+
+    If there are no other customers waiting, he returns to his chair and sleeps in it.
+
+    Each customer, when he arrives, looks to see what the barber is doing. If the barber is sleeping, then the customer wakes him up
+
+    and sits in the chair. If the barber is cutting hair, then the customer goes to the waiting room.
+
+    If there is a free chair in the waiting room, the customer sits in it and waits his turn. If there is no free chair, then the customer leaves.
+    </p>
+
+
+</body>
+</html>

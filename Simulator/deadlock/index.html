@@ -1,0 +1,89 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./bootstrap.min.css">
+	<link rel="stylesheet" href = "styles.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+	</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand" href="../index.html" style="color:white;">OS Simulator</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" style="color:white;">
+					<a class="nav-link" style="color:white;" href="index.html">Deadlocks-Home</a>
+				</li>
+				<li class="nav-item active" style="color:white;">
+					<a class="nav-link" style="color:white;" href="wiki.html">Wiki</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="displat-3 text-center" >
+			<h1>Deadlocks</h1>
+	</div>
+	<hr class="my-2">
+	<br>
+	<div>
+
+		<div class="container">
+				<div class="row">
+				    <div class="col-md-6">
+						<div style="text-align:center">
+						  <div id="file">
+							    <i class="far fa-file" style="font-size: 40px;"></i>
+						  </div>
+						  <a href="banker.html" style="text-decoration:none;font-size : 1.8em;">Banker's Algorithm</a>
+						</div>
+				    </div>
+
+				  <div class="col-md-6">
+						<div style="text-align:center">
+							<div id="file">
+								<i class="far fa-file" style="font-size: 40px;"></i>
+							</div>
+							<a href="deadlock.html" style="text-decoration:none;font-size: 1.8em;">Single Instance Problem</a>
+						  </div>
+				  </div>
+				</div>
+		</div>
+	</div>
+
+	<div class = "container">
+
+
+	</div>
+
+</body>
+
+<script>
+	function change(but_num) {
+		var bu = document.getElementsByTagName("button")[but_num];
+		bu.classList.add("back");
+		bu.classList.remove("button1");
+
+		if (but_num == 0) {
+			window.location = "banker.html";
+		}
+
+		if (but_num == 1) {
+			window.location = "deadlock.html";
+		}
+	}
+</script>
+
+</html>

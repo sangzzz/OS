@@ -1,0 +1,226 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="./bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	</head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+		<style>
+
+
+			body{ font-family: 'PT Sans', sans-serif; }
+
+
+			.button1 {
+			  border-radius: 4px;
+			  background-color: #2196F3;
+			  border: none;
+			  color: #FFFFFF;
+			  text-align: center;
+			  font-size: 28px;
+			  padding: 20px;
+			  width: 200px;
+			  transition: all 0.5s;
+			  cursor: pointer;
+			  margin: 5px;
+			}
+
+			.button1 span {
+			  cursor: pointer;
+			  display: inline-block;
+			  position: relative;
+			  transition: 0.5s;
+			}
+
+			.button1 span:after {
+			  content: '\00bb';
+			  position: absolute;
+			  opacity: 0;
+			  top: 0;
+			  right: -20px;
+			  transition: 0.5s;
+			}
+
+			.button1:hover span {
+
+			  padding-right: 25px;
+			}
+
+			.button1:hover{
+				background: linear-gradient(to right, #2196F3 16%,#BBDEFB 100%);
+			}
+			.button1:hover span:after {
+			  opacity: 1;
+			  right: 0;
+			}
+
+
+			/*=====2=========================== style 2 ========================================*/
+			.button2 {
+    position: relative;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button2:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.9s
+}
+
+.button2:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+    background-color: green;
+}
+
+.back{
+	background-color: green;
+	border-radius: 4px;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 28px;
+	padding: 20px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.but1{
+
+	position:absolute;
+	margin-left:15%;
+	margin-top:20%;
+	border-radius: 12px;
+}
+
+.but2{
+
+	position:absolute;
+	margin-left:30%;
+	margin-top:20%;
+	border-radius: 12px;
+}
+
+.but3{
+	position:absolute;
+	margin-left:45%;
+	margin-top:20%;
+	border-radius: 12px;
+}
+
+
+.but4{
+
+	position:absolute;
+	margin-left:60%;
+	margin-top:20%;
+	border-radius: 12px;
+}
+
+.but5{
+
+	position:absolute;
+	margin-left:75%;
+	margin-top:20%;
+	border-radius: 12px;
+}
+		</style>
+
+	<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand" href="../index.html" style="color:white;">OS Simulator</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" style="color:white;">
+						<a class="nav-link" style="color:white;" href="index.html">Process-Syncronisation-Home</a>
+				</li>
+				<li class="nav-item active" style="color:white;">
+					<a class="nav-link" style="color:white;" href="wiki.html">Wiki</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+		<h1 style="color:#000000; position:absolute; left:15%">Process Syncronisation </h1>
+
+		<button class="button1 button2 but1" onclick="change(0)"><span>Producer-consumer </span></button>
+		<button class="button1 button2 but2" onclick="change(1)"><span>Dining Philosopher</span></button>
+		<button class="button1 button2 but3" onclick="change(2)"><span>Barrier Semaphore </span></button>
+		<button class="button1 button2 but4" onclick="change(3)"><span>Reader-Writer </span></button>
+		<button class="button1 button2 but5" onclick="change(4)"><span>Sleeping Barber</span></button>
+
+		<img src="producer.jpg" alt="" style="position:absolute;left:15%;top:26%;width:200px;height:200px;">
+		<img src="dining.jpg" alt="" style="position:absolute;left:30%;top:27%;width:200px;height:190px;">
+		<img src="barrier.jpeg" alt="" style="position:absolute;left:45%;top:26%;width:200px;height:200px;">
+		<img src="reader.jpeg" alt="" style="position:absolute;left:60%;top:27%;width:200px;height:190px;">
+		<img src="barber.png" alt="" style="position:absolute;left:75%;top:27%;width:200px;height:200px;">
+
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	</body>
+
+	<script>
+		function change(but_num){
+			var bu = document.getElementsByTagName("button")[but_num];
+			bu.classList.add("back");
+			bu.classList.remove("button1");
+
+			if(but_num == 0)
+			{
+				window.location = "prod.html";
+			}
+			if(but_num == 1)
+			{
+				window.location = "dining.html";
+			}
+
+
+			if(but_num == 2)
+			{
+				window.location = "Barrier.html";
+			}
+
+			if(but_num == 3)
+			{
+				window.location = "writerreader.html";
+			}
+
+
+
+			if(but_num == 4)
+			{
+				window.location = "sleeping.html";
+			}
+		}
+	</script>
+</html>

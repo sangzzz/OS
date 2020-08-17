@@ -1,0 +1,33 @@
+body{
+    font-family: 'PT Sans' , sans-serif;
+
+}
+
+ul{
+    list-style-type: square;
+}
+p{
+    font-size: 1.2em;
+}
+a{
+    font-size: 1.2em;
+}
+
+.points{
+    font-size: 1em;
+}
+@keyframes FadeOut{
+0% {
+/* position: absolute; */
+opacity: 0;
+}
+
+75% {
+/* position: absolute; */
+opacity: 0.75;
+}
+
+100% {
+opacity: 1;
+}
+}

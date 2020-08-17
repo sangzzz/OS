@@ -1,0 +1,100 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="wiki.css">
+
+    <style>
+    body{
+    	font-family: 'PT Sans', sans-serif;
+	}
+	ul{
+    	list-style-type: none;
+	}
+	a{
+    	font-size: 1.2em;
+    }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand" href="../index.html" style="color:white;">OS Simulator</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" style="color:white;">
+					<a class="nav-link" style="color:white;" href="index.html">Page-Replacement-Home</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="displat-3 text-center" >
+			<h1>Page Replacement Algorithms</h1>
+		</div>
+		<hr class="my-2">
+		<br/>
+	</div>
+    <div class="flex-container">
+        <div class="container">
+            <article class="article">
+                <div>
+                  <p>Paging is a type of memory management scheme in which the logical address space of the processes is noncontiguous. The basic method for implementing paging involves breaking the physical memory into fixed-sized blocks called <b>frames</b> and breaking logical memory into blocks of the same size called <b>pages</b>. When a process is to be executed, its pages are loaded into any available memory frames from their source which could be a file system or the backing store.</p>
+                  <p>The operating system decides the number of frames allocated to a process and which page needs to be replaced when a new page comes in if all the frames for that process are already allocated. The OS does this using various <b>page replacement algorithms</b>. The performance of these algorithms is decided based on the number of <b>page hits</b> and <b>page faults</b>. If we find the required page in the Main Memory while CPU wants to access the page then it is a page hit. Otherwise it is a page fault. Different page replacement algorithms suggest different ways to decide which page to replace. The target for all algorithms is to reduce number of page faults.</p>
+                  <p>We discuss and simulate 5 Algorithms here: First-In First-Out, Least Recently Used, Optimal Page Replacement, Second Chance Algorithm and Most Recently Used. We also check by simulation for the possibility of Belady's Anomaly.</p>
+                  <h2>First-In First-Out (FIFO):</h2>
+                  <p>This is the simplest page replacement algorithm and is based on the FIFO queue. In this algorithm, the operating system keeps track of all pages in the memory in a queue, the oldest page is in the front of the queue. When a page needs to be replaced page in the front of the queue is selected for removal. </p>
+                  <p>Depending on the reference string the page removed might be rarely used page like an initialization module or even an important module that occurs frequently in process execution showing its variable nature.</p>
+                  <p>While FIFO is cheap and intuitive, it performs poorly in practical application. Thus, it is rarely used in its unmodified form.</p>
+
+
+                  <h2>Least Recently Used (LRU) and Most Recently Used (MRU):</h2>
+                  <p>Both LRU and MRU are greedy algorithms. LRU chooses the page that has not been used for the longest period of time. While MRU does the very opposite by choosing the most recently used page.</p>
+                  <p>While LRU is generally a good choice as an algorithm it requires keeping track of what was used when, which is expensive and may require substantial hardware assistance. MRU on the other hand is simpler to implement.</p>
+
+
+                  <h2>Optimal Page Replacement:</h2>
+                  <p>This algorithm is the theoretically optimal page replacement algorithm as it guarantees the lowest possible page fault rate for a fixed number of frames. It is also known as OPT, clairvoyant replacement algorithm, or Belady's optimal page replacement policy. It swaps out the page whose next use will occur farthest in the future, i.e., the page that will not be used for the longest period of time.</p>
+                  <p>The drawback is that it requires future knowledge of the reference string. Hence it cannot be implemented in a general-purpose operating system because it is impossible to compute reliably how long it will be before a page is going to be used.</p>
+
+
+                  <h2>Second Chance Algorithm:</h2>
+                  <p>It is a modified form of FIFO and performs relatively better than FIFO at little cost for the improvement. It works by looking at the front of the queue as FIFO does, but instead of immediately paging out that page, it checks to see if its referenced bit is set. If it is not set, the page is swapped out. Otherwise, the referenced bit is cleared, the page is inserted at the back of the queue (as if it were a new page) and this process is repeated. This can also be thought of as a circular queue.</p>
+                  <p>As it's name suggests, Second-chance gives every page a "second-chance" – an old page that has been referenced is probably in use, and should not be swapped out over a new page that has not been referenced.</p>
+
+                  <h2>Belady's anomaly:</h2>
+                  <p>Belady's anomaly is the phenomenon in which increasing the number of page frames results in an increase in the number of page faults for certain memory access patterns.</p>
+                  <p>This phenomenon is commonly experienced when using the FIFO page replacement algorithm. In FIFO, the page fault may or may not increase as the page frames increase, but in Optimal and stack-based algorithms like LRU, as the page frames increase the page fault decreases.</p>
+                  <img src="belady.png"></img>
+                  <p>An example of Belady's anomaly. Using three page frames, nine page faults occur. Increasing to four page frames causes ten page faults to occur.</p>
+
+                </div>
+
+
+            </article>
+        </div>
+    </div>
+    <footer>
+        <a style="color:white;" href="../os_sim.html">Home</a>
+    </footer>
+</body>
+
+</html>

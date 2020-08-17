@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="./bootstrap.min.css" rel="stylesheet">
+	<title>Page Replacement Algorithms</title>
+	<style>
+			body{
+				font-family: 'PT Sans', sans-serif;
+			}
+			ul{
+				list-style-type: none;
+			}
+			a{
+
+				font-size: 1.2em;
+
+			}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand" href="../index.html" style="color:white;">OS Simulator</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" style="color:white;">
+					<a class="nav-link" style="color:white;" href="wiki.html">Wiki</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="displat-3" >
+			<h1><center>Page Replacement Algorithms</center></h1>
+		</div>
+		<hr class="my-2">
+		<br/>
+
+	<div>
+		<div class="container">
+				<div class="row">
+				  <div class="col-md-4">
+						<div style="text-align:center">
+						  <div id="file">
+							  <i class="far fa-file" style="font-size: 40px;"></i>
+						  </div>
+						  <a href="fifo.html" style="text-decoration:none;">First-in First-out</a>
+						</div>
+						<div style="text-align:center;padding-top: 20px;">
+							<div id="file">
+								<i class="far fa-file" style="font-size: 40px;"></i>
+							</div>
+							<a href="optimal.html" style="text-decoration:none;">Optimal Page Replacement</a>
+						  </div>
+					</div>
+					<div class="col-md-4">
+						<div style="text-align:center">
+							<div id="file">
+								<i class="far fa-file" style="font-size: 40px;"></i>
+							</div>
+							<a href="lru.html" style="text-decoration:none;">Least Recently Used Algorithm</a>
+						  </div>
+
+						  <div style="text-align:center;padding-top: 20px;">
+							  <div id="file">
+								  <i class="far fa-file" style="font-size: 40px;"></i>
+							  </div>
+							  <a href="mru.html" style="text-decoration:none;">Most Recently Used Algorithm</a>
+							</div>
+				  </div>
+					<div class="col-md-4">
+						<div style="text-align:center">
+							<div id="file">
+								<i class="far fa-file" style="font-size: 40px;"></i>
+							</div>
+							<a href="belady.html" style="text-decoration:none;">Belady's Anomaly</a>
+						  </div>
+
+						  <div style="text-align:center;padding-top: 20px;">
+							  <div id="file">
+								  <i class="far fa-file" style="font-size: 40px;"></i>
+							  </div>
+							  <a href="sc.html" style="text-decoration:none;">Second Chance Algorithm</a>
+							</div>
+				  </div>
+				</div>
+				<br><br>
+				<div class="text-center">
+				<button type="button" class="btn btn-primary" onclick="getall()" align="center">Compare all</button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script>
+		function getall() {
+			window.location = "all.html";
+		}
+	</script>
+</html>

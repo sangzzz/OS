@@ -1,0 +1,304 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      .flex-container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        text-align: center;
+      }
+
+      .flex-container > * {
+        padding: 15px;
+        -webkit-flex: 1 100%;
+        flex: 1 100%;
+      }
+
+      .article {
+        text-align: left;
+      }
+
+      header {
+        background: black;
+        color: white;
+        width: 90%;
+      }
+      footer {
+        background: #aaa;
+        color: white;
+      }
+      .nav {
+        background: #eee;
+      }
+
+      .nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .nav ul a {
+        text-decoration: none;
+      }
+
+      @media all and (min-width: 768px) {
+        .nav {
+          text-align: left;
+          -webkit-flex: 1 auto;
+          flex: 1 auto;
+          -webkit-order: 1;
+          order: 1;
+        }
+        .article {
+          -webkit-flex: 5 0px;
+          flex: 5 0px;
+          -webkit-order: 2;
+          order: 2;
+        }
+        footer {
+          -webkit-order: 3;
+          order: 3;
+        }
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+      integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+      integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+      integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      <a class="navbar-brand" href="../index.html">OS simulator</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html" style="color: #fff;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: #fff;">Wiki</a>
+        </li>
+      </ul>
+    </nav>
+    <br /><br /><br /><br />
+
+    <div class="flex-container">
+      <header>
+        <h1>Memory Management</h1>
+      </header>
+
+
+
+      <div class="container">
+        <article class="article">
+          <div>
+            <h1>Introduction</h1>
+            <p>
+              Memory management is the functionality of an operating system
+              which handles or manages primary memory and moves processes back
+              and forth between main memory and disk during execution. Memory
+              management keeps track of each and every memory location,
+              regardless of either it is allocated to some process or it is
+              free. It checks how much memory is to be allocated to processes.
+              It decides which process will get memory at what time. It tracks
+              whenever some memory gets freed or unallocated and correspondingly
+              it updates the status
+            </p>
+          </div>
+          <div>
+            <h1>Why do we need memory management in OS?</h1>
+            <h3>Relocation:</h3>
+            <p>
+              When we generally work on a multiprogramming system, several
+              processes are running in the background. It isn’t possible for us
+              to know in advance which other programs will reside in the main
+              memory and when we’ll execute our processes.To solve this, the
+              memory manager takes care of the executed and to be executed
+              processes and allocates and frees up memory accordingly, making
+              the execution of processes smooth and memory efficient
+            </p>
+            <h3>Protection:</h3>
+            <p>
+              With the execution of multiple processes, one process may write in
+              the address space of another process. This is why every process
+              must be protected against unwanted interference by any other
+              process. The memory manager, in this situation, protects the
+              address space of every single process. Keeping in mind the
+              relocation algorithm too. The protection aspect and the relocation
+              aspect of the memory manager work in synchronization.
+            </p>
+            <p>
+              Some Other problems which can be solved by memory management are
+              <strong
+                >Sharing,Logical organization,physical organization.</strong
+              >
+            </p>
+          </div>
+          <div>
+            <h1>Memory partitioning</h1>
+            <p>
+              For better utilization of memory and flow of execution, we divide
+              the memory into different sections to be used by the resident
+              programs. The process of dividing the memory into sections is
+              called memory partitioning.
+            </p>
+            <h3>Fixed Partitioning/Static Partitioning:</h3>
+            <p>
+              In fixed partitioning, the number of non-overlapping partitions in
+              RAM is fixed, but the size of each partition may not be the same.
+              As the allocation of memory is contiguous, no spanning is allowed.
+              In fixed partitioning, the partitions are made either before
+              execution or during system configuration.
+            </p>
+            <h3>Dynamic Partitioning:</h3>
+            <p>
+              In dynamic partitioning, the primary memory is emptied, and
+              partitions are made during the run time according to the needs of
+              the different processes. The size of the partition will be equal
+              to the incoming process. The number of partitions will not be
+              fixed and will depend on the number of incoming processes. It will
+              also depend on the size of the main memory. The partition size
+              varies according to the need of the processes.
+            </p>
+          </div>
+
+          <div>
+            <h1>Fragmentation</h1>
+            <p>
+              After the partitioning of memory comes the fragmentation. When the
+              processes are loaded to and removed from memory, the memory space
+              that gets freed breaks into little pieces. Now, when this happens,
+              no further processes can be allotted memory as their size becomes
+              too small for that, and hence the memory blocks remain unused. The
+              solution to this problem is known as fragmentation. In other
+              words, fragmentation can be defined as the issue of a memory that
+              arises when processes are loaded to and removed from the memory,
+              breaking it into pieces.
+            </p>
+            <p>Fragmentation is of two types:</p>
+            <ul>
+              <li>
+                <h3>External fragmentation</h3>
+                <p>
+                  The total memory space is enough to satisfy a request or to
+                  reside a process in it. But it is not contiguous, so it cannot
+                  be used.
+                </p>
+              </li>
+              <li>
+                <h3>Internal fragmentation</h3>
+                <p>
+                  Memory block assigned to processes is bigger. Some portion of
+                  the memory may be left unused, as it cannot reside in any
+                  other processes.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h1>Swapping</h1>
+            <p>
+              Swapping is a technique for making memory compact. It is a
+              mechanism that is used to temporarily swap processes out of the
+              main memory to secondary memory, and this makes more memory
+              available for some other processes. At some later time, the system
+              can swap back the process from the secondary memory to the main
+              memory. Swapping does affect the performance of the system, but it
+              helps in running multiple processes parallelly. The total time
+              taken by the swapping of a process includes the time it takes to
+              move the entire process to the secondary memory and then again to
+              the main memory.
+            </p>
+          </div>
+
+          <div>
+            <h1>Multiprogramming with Fixed Tasks (MFT)</h1>
+            <img src="./pics/mft.png" alt="MFT" />
+            <ul>
+              <li>Memory is divided into several fixed-size partitions</li>
+              <li>Each partition may contain exactly one process/task</li>
+              <li>
+                The degree of multiprogramming is bound by the number of
+                partitions
+              </li>
+              <li>Memory wastage is caused due to internal fragmentation</li>
+            </ul>
+          </div>
+
+          <div>
+            <h1>Multiprogramming with Variable Tasks (MVT)</h1>
+            <img src="./pics/mvt.png" alt="MVT" />
+            <ul>
+              <li>Developed to address the drawbacks of fixed partitioning</li>
+              <li>Partitions of variable length and number</li>
+              <li>
+                When a process is brought into main memory, it is allocated
+                exactly as much memory as it requires
+              </li>
+              <li>No internal fragmentation</li>
+            </ul>
+          </div>
+
+          <div>
+            <h1>Memory Allocation</h1>
+            <p>
+              Memory allocation is a process by which computer programs are
+              assigned memory or space
+            </p>
+            <ul>
+              <li>
+                <h3>First Fit</h3>
+                <p>The first hole that is big enough is allocated to program</p>
+              </li>
+              <li>
+                <h3>Best Fit</h3>
+                <p>
+                  The smallest hole that is big enough is allocated to program
+                </p>
+              </li>
+              <li>
+                <h3>Worst Fit</h3>
+                <p>
+                  The largest hole that is big enough is allocated to program
+                </p>
+              </li>
+              <li>
+                <h3>Next Fit</h3>
+                <p>
+                  Scans the memory from the location of last placement and
+                  chooses next available block that is large enough
+                </p>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

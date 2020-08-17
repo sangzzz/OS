@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>	<!-- dont remove this  -->
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="./bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+ 	<link rel="stylesheet" href="styles.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+	<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+	ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
+
+	<style>
+	body{
+    	font-family: 'PT Sans', sans-serif;
+	}
+	ul{
+    	list-style-type: none;
+	}
+	a{
+    	font-size: 1.2em;
+	}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand" href="../index.html" style="color:white;">OS Simulator</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" style="color:white;">
+					<a class="nav-link" style="color:white;" href="disk_scheduling.html">Disk-Scheduling-Home</a>
+				</li>
+				<li class="nav-item active" style="color:white;">
+					<a class="nav-link" style="color:white;" href="wiki1.html">Wiki</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="displat-3 text-center" >
+			<h1>Disk Scheduling</h1>
+
+		<hr class="my-2">
+		<h3>Comparison of Disk Scheduling Algorithms</h3>
+		<br/>
+		</div>
+	</div>
+
+	<div class="options" align="center">
+		<h2 style="font-weight: bolder;">Choose the algorithms to compare</h2>
+		<br>
+		<button class="btn btn-outline-secondary" value= "fcfs" onclick="optchecked(this)" >F C F S</button>
+		<button class="btn btn-outline-secondary" value= "sstf" onclick="optchecked(this)" >S S T F</button>
+		<button class="btn btn-outline-secondary" value= "scan" onclick="optchecked(this)">S C A N</button>
+		<button class="btn btn-outline-secondary" value= "cscan" onclick="optchecked(this)" >C S C A N</button>
+		<button class="btn btn-outline-secondary" value= "look" onclick="optchecked(this)" >L O O K</button>
+		<button class="btn btn-outline-secondary" value= "clook" onclick="optchecked(this)" >C L O O K</button>
+	</div>
+
+	<div class="container-fluid" style="color:black;margin-top:5%">
+		<h3 style="text-align: center;font-weight:bold;">Enter the Head Position, First and Last Cylinders : </h3>
+		<br><br>
+		<div class="row">
+			<div class = "col-md-4" align="center">
+				<label style="font-size: 25px;">HEAD</label>
+				<input class="tdm-head" type="number" min="0" style="margin-left: 5%;width:220px;">
+			</div>
+			<div class = "col-md-4" align="center">
+				<label style="font-size: 25px;">FIRST</label>
+				<input class="tdm-head" type="number" min="0" style="margin-left: 5%;width:220px;">
+			</div>
+			<div class = "col-md-4" align="center">
+				<label style="font-size: 25px;">LAST</label>
+				<input class="tdm-head" type="number" min="0" style="margin-left: 5%;width:220px;">
+			</div>
+		</div>
+	</div>
+
+	<div style="margin-top:5%;margin-left:8%;font-size: 25px">
+		<p style="font-weight: bold;">Enter requests (Maximum : 10 requests)</p>
+	</div>
+
+	<div style="margin-top:-7%;margin-left:5%">
+		<input placeholder="Request 1" class="tdm-abc" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:8%;margin-left:5px;text-align: center">
+		<input placeholder="Request 2" class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:16%;margin-left:15px;text-align: center">
+		<input placeholder="Request 3" class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:24%;margin-left:15px;text-align: center">
+		<input placeholder="Request 4" class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:32%;margin-left:15px;text-align: center">
+		<input placeholder="Request 5" class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:40%;margin-left:15px;text-align: center">
+		<input placeholder="Request 6" class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:48%;margin-left:15px;text-align: center">
+		<input placeholder="Request 7" class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:56%;margin-left:15px;text-align: center">
+		<input placeholder="Request 8" class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:64%;margin-left:15px;text-align: center">
+		<input placeholder="Request 9" class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:72%;margin-left:15px;text-align: center">
+		<input placeholder="Request 10" class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:80%;margin-left:15px;text-align: center">
+	</div>
+<button class="tdm-button" onclick="myFunction()" style="margin-top: 70px; margin-left:40%;position:absolute;width:300px;margin-bottom: 30px;">Add Request</button>
+<button class="tdm-button" onclick="calculate()" style="margin-top: 70px; margin-left:65%;position:absolute;width:300px;margin-bottom: 30px;"> Calculate Head Movements </button>
+
+<div class="tdm-footer">
+	<br><br>
+	<p id="output_fcfs"></p>
+	<p id="output_sstf"></p>
+	<p id="output_scan"></p>
+	<p id="output_cscan"></p>
+	<p id="output_look"></p>
+	<p id="output_clook"></p>
+</div>
+<p id="output"></p>
+<div id="chartContainer" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
+
+<div class="tdm-hide" id="s_graph">
+	<button class="tdm-button" onclick="show_graph_section()" style="width: 260px;height:60px;margin-left: 5%;margin-top: 3%"> Show Header Movement</button>
+</div>
+<!-- modal buttons -->
+<br><br>
+<div class="tdm-hide" id="graph_section" align="center">
+	<h3 style="font-weight: bold;margin-bottom: 30px;"> HEADER MOVEMENT </h3>
+	<button onclick="fcfsModal()" class="tdm-button" data-toggle="modal" style="font-weight: bold">FCFS</button>
+	<button onclick="sstfModal()" class="tdm-button" data-toggle="modal"style="font-weight: bold" >SSTF</button>
+	<button onclick="scanModal()" class="tdm-button" data-toggle="modal"style="font-weight: bold" >SCAN</button>
+	<button onclick="cscanModal()" class="tdm-button" data-toggle="modal"style="font-weight: bold" >CSCAN</button>
+	<button onclick="lookModal()" class="tdm-button" data-toggle="modal" style="font-weight: bold">LOOK</button>
+	<button onclick="clookModal()" class="tdm-button" data-toggle="modal"style="font-weight: bold">CLOOK</button>
+	<h4 style="font-weight: bold;margin-top: 30px;"> X-axis: Request Track Number ----- Y-axis: Request Number</h4>
+</div>
+
+<div id="chartContainer_fcfs" style="height: 400px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_sstf" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_scan" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_cscan" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_look" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_clook" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+
+<p id="input_fcfs"></p>
+<p id="input_sstf"></p>
+<p id="input_scan"></p>
+<p id="input_cscan"></p>
+<p id="input_look"></p>
+<p id="input_clook"></p>
+
+<script type="text/javascript" src="disk.js"></script>
+
+</body>
+
+
+</html>
